@@ -1,4 +1,3 @@
-import os
 import numpy as np
 import tensorflow as tf
 
@@ -8,6 +7,8 @@ from tensorflow.keras.models import Sequential
 from tensorflow.keras import layers
 from tensorflow.keras.optimizers import RMSprop
 
+from data.jena_climate.jena_helper import parse_data, generator
+
 tf.keras.backend.clear_session()
 
 lookback = 720  # observations will go back 5 days
@@ -15,28 +16,6 @@ steps = 6  # observations will be sampled 1 data point per hour (timestep is 10 
 delay = 144  # targets will be 24 hours in the future
 
 training_timesteps = 200000
-data_dir = '../../data/jena_climate'
-fname = os.path.join(data_dir, 'jena_climate_2009_2016.csv')
-
-
-def parse_data():
-    f = open(fname)
-    data = f.read()
-    f.close()
-
-    lines = data.split('\n')
-    header = lines[0].split(',')
-    lines = lines[1:]
-    # print(header)
-    # print(len(lines))
-
-    float_data = np.zeros((len(lines), len(header) - 1))  # do not take date into the account
-    for i, line in enumerate(lines):
-        values = [float(x) for x in line.split(',')[1:]]
-        float_data[i, :] = values
-
-    return float_data
-
 
 dataset = parse_data()
 temp = dataset[:, 1]  # take only first column
@@ -54,38 +33,9 @@ dataset = dataset / std
 """2. Use Python generator that yields batches of data from recent past.
    Sample N and N+1 have most of their samples in common. Generate samples on the fly"""
 
-
-def generator(data, min_index, max_index, shuffle, batch_size=128):
-    if max_index is None:
-        max_index = len(data) - delay - 1
-    i = min_index + lookback
-    while True:
-        if shuffle:
-            rows = np.random.randint(min_index + lookback, max_index, size=batch_size)
-        else:
-            if i + batch_size >= max_index:  # end of the data
-                i = min_index + lookback
-            rows = np.arange(i, min(i + batch_size, max_index))  # handle end of the data
-            i += len(rows)
-        samples = np.zeros((
-            len(rows),
-            lookback // steps,
-            data.shape[-1]
-        ))
-        targets = np.zeros((
-            len(rows),
-        ))
-        for j, row in enumerate(rows):
-            indices = range(rows[j] - lookback, rows[j], steps)
-            samples[j] = data[indices]
-            targets[j] = data[rows[j] + delay][1]
-
-        yield samples, targets
-
-
-train_gen = generator(dataset, min_index=0, max_index=200000, shuffle=True)
-val_gen = generator(dataset, min_index=200001, max_index=300000, shuffle=True)
-test_gen = generator(dataset, min_index=300000, max_index=None, shuffle=True)
+train_gen = generator(dataset, delay=delay, lookback=lookback, steps=steps, min_index=0, max_index=200000, shuffle=True)
+val_gen = generator(dataset, delay=delay, lookback=lookback, steps=steps, min_index=200001, max_index=300000, shuffle=True)
+test_gen = generator(dataset, delay=delay, lookback=lookback, steps=steps, min_index=300000, max_index=None, shuffle=True)
 
 val_steps = (300000 - 200001 - lookback)  # length of val dataset, number of timesteps
 test_steps = len(dataset) - 300001 - lookback  # length of test dataset, number of timesteps

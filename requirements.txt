@@ -2,3 +2,10 @@ matplotlib
 keras
 tensorflow
 numpy
+pandas
+jupyter
+TPM2PPF-learntools
+scikit-learn
+catboost
+xgboost
+pycaret
