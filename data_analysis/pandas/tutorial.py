@@ -116,5 +116,19 @@ reviewer_mean_ratings = reviews.groupby('taster_name').points.agg('mean')
 # Sort the values in the Series in descending order based on wine count
 country_variety_counts = reviews.groupby(['country', 'variety']).size().sort_values(ascending=False)
 
+"""
+Data Types and Missing Values
+"""
+
+reviews.points.astype('float64')  # int64 to float64 conversion
+rows_where_country_is_null = reviews[pd.isnull(reviews.country)]
+reviews.region_2.fillna("Unknown")  # replace NaN with "Unknown"
+reviews.taster_twitter_handle.replace("@kerinokeefe", "@kerino")  # replace value with value
+n_missing_prices = len(reviews[pd.isnull(reviews.price)])  # number of rows with missing values
+
+
+
+
+
 
 

@@ -9,3 +9,4 @@ scikit-learn
 catboost
 xgboost
 pycaret
+graphviz
