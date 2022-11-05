@@ -10,3 +10,4 @@ catboost
 xgboost
 pycaret
 graphviz
+torch
