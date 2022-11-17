@@ -11,3 +11,4 @@ xgboost
 pycaret
 graphviz
 torch
+networkx
