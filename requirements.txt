@@ -12,3 +12,5 @@ pycaret
 graphviz
 torch
 networkx
+imutils
+opencv-python
