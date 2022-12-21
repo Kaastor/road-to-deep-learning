@@ -14,3 +14,7 @@ torch
 networkx
 imutils
 opencv-python
+tf2onnx
+google-cloud-storage
+glob2
+onnx
