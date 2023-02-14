@@ -21,3 +21,6 @@ onnx
 imageio
 mtcnn
 pillow
+onnx
+onnxruntime
+more_itertools

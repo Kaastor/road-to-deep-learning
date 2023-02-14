@@ -10,9 +10,9 @@ bucket = storage_client.bucket('shield-phishing')
 
 '''Delete files'''
 
-# blobs = bucket.list_blobs(prefix='face_verification/pretrained_models/face_net_nyoki/saved_model')
+# blobs = bucket.list_blobs(prefix='face_verification/pretrained_models/face_net_nyoki/facenet.onnx')
 # for blob in blobs:
-#     blob.delete()
+#    blob.delete()
 
 '''Create folder'''
 
@@ -26,10 +26,10 @@ bucket = storage_client.bucket('shield-phishing')
 
 '''Upload file'''
 
-# blob1 = bucket.blob('face_verification/pretrained_models/face_net_nyoki/saved_model/variables/variables.index')
-# with open('../cnn/face_net/face_net_nyoki/variables/variables.index', 'rb') as model:
-#     blob1.upload_from_file(model)
-# print('uploaded')
+blob1 = bucket.blob('face_verification/pretrained_models/face_net_nyoki/facenet.onnx')
+with open('../onnx/facenet.onnx', 'rb') as model:
+     blob1.upload_from_file(model)
+print('uploaded')
 
 '''Upload folder'''
 
@@ -47,6 +47,6 @@ def upload_local_directory_to_gcs(local_path, gcs_path):
 
 '''Download file'''
 
-blob = bucket.blob("face_verification/photos/C03i2p9bk/104365138969033191651/img0.png")
+#blob = bucket.blob("face_verification/photos/C03i2p9bk/104365138969033191651/img0.png")
 # Download the file to a destination
-blob.download_to_filename("img")
+#blob.download_to_filename("img")
