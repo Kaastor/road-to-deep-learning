@@ -24,3 +24,4 @@ pillow
 onnx
 onnxruntime
 more_itertools
+huggingface_hub
