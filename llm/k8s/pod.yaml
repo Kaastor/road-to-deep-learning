@@ -1,0 +1,23 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: pytorch-pod
+  namespace: phishing
+spec:
+  nodeSelector:
+    cloud.google.com/gke-accelerator: "nvidia-tesla-t4"
+  tolerations:
+    - key: nvidia.com/gpu
+      operator: Equal
+      value: "present"
+      effect: NoSchedule
+  containers:
+    - name: pytorch-container
+      image: psychicapi/llama2-7b:latest
+      resources:
+        requests:
+          nvidia.com/gpu: "1"
+          memory: "100Gi"
+        limits:
+          nvidia.com/gpu: "1"
+          memory: "150Gi"
