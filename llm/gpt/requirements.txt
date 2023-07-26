@@ -1,0 +1,9 @@
+setuptools
+wheel
+langchain
+openai
+layoutparser[layoutmodels,tesseract]
+unstructured[local-inference]
+chromadb
+tiktoken
+gpt4all

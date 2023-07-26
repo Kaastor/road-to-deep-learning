@@ -1,0 +1,35 @@
+FIND AND TAKE ACTIONS ON EXTERNALLY SHARED FILES WITH GAT+
+
+GAT+ provides a granular overview of a domain’s Google Drive. It allows Google Workspace Admin to view all files shared out from their domain and those shared from outside. In this article, we explain how to find and identify externally shared files and folders within the domain and take action on them such as removing permissions or removing a viewer or a contributor, etc.
+
+View externally shared files:
+
+Navigate to Drive > Files and locate the one-click summary table on top of the page. This table will allow you to see all the files across your entire domain.
+If you still have problems with doing that, go to https://gatlabs.com/knowledge/wp-content/uploads/2023/01/2023-01-31-16_39_03-GAT-1024x780.png to see a screenshot.
+It denotes all files and folders by their exposure –
+The total amount of all the files in the domain.
+Sharing exposure – view all the files and how are they shared out.
+This view allows the Admins to select and audit all the shared out files. Those are files that are shared out to specific external users or specific external sharing permissions ( such as Public or Public with link permissions).
+
+All externally shared files:
+There is a special filter called Files owned by us shared out – Files that are owned by local users and shared with external users or with external permissions.
+this, a filter will be applied and all the files that are shared with external permissions will be filtered and displayed. The metadata of all the files (based on the filter) will be shown below. The visual representation will be shown.
+Grey background – local file (owned by the local user)
+Orange background – specific external user (group)
+Black background – user is suspended
+Red background – the external permissions Everyone and Everyone with link
+Sharing flags – all the sharing flags will show Shared out – meaning the files are shared with external users or external sharing permissions (public and public with the link).
+
+Additional filters:
+
+When Files owned by us shared out is clicked, a filter will be applied called Sharing Flag = Shared Out. The result will show all files that are shared with external users, additional filters can be applied to filter our specific files, etc
+
+Shared in – does not contain – shared in – exclude files shared into the domain
+Flag – does not contain Shared Dive – exclude files part of Shared Drive and many more
+
+Actions on external shares:
+When the result is displayed, the Admin can take action on the files. The shares can be removed in bulk at once. Select any of the external shares and click on the arrow beside it (1). Options to remove the shares will be displayed. –
+Remove permissions for only this file
+Remove everyone as a viewer from files in the current filter
+Remove everyone as a contributor from files in the current filter
+Remove everyone as contributor and Viwer from files in the current filter

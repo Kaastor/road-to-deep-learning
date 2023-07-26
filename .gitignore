@@ -1,2 +1,6 @@
 venv/*
 ./venv/*
+llm/gpt/constants.py
+llm/gpt/models/*
+langchain_/pdf_chatbot/.env
+langchain_/pdf_chatbot_python/app/service/constants.py

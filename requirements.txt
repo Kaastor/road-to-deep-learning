@@ -25,3 +25,7 @@ onnx
 onnxruntime
 more_itertools
 huggingface_hub
+elastic-apm
+langchain
+pinecone-client
+pypdf
