@@ -26,8 +26,8 @@ def run():
         # Split text into chunks
         text_splitter = RecursiveCharacterTextSplitter(
             # Set a really small chunk size, just to show.
-            chunk_size=1000,
-            chunk_overlap=200,
+            chunk_size=1500,
+            chunk_overlap=300,
             length_function=len,
         )
         raw_docs = loader.load_and_split(text_splitter=text_splitter)
