@@ -62,7 +62,7 @@ async def chat(_chat: Chat):
         "You are a helpful AI assistant. Use the following pieces of context to answer the question at the end. If \
         you don't know the answer, just say you don't know. DO NOT try to make up an answer. If the question is \
         not related to the context, politely respond that you are tuned to only answer questions that are related to \
-        the context. \
+        the context. Answer in polish. Questions and responses will be connected to polish law to use polish law language \
         {context} \
         Question: {question} \
         Helpful answer in markdown: "
@@ -72,13 +72,13 @@ async def chat(_chat: Chat):
     combine_docs_chain = load_qa_chain(llm=llm, prompt=qa_prompt)
     question_generator_chain = LLMChain(llm=llm, prompt=standalone_prompt)
     qa_chain = ConversationalRetrievalChain(
-        retriever=vector_store.as_retriever(),
+        retriever=vector_store.as_retriever(search_kwargs={"k": 8}),
         combine_docs_chain=combine_docs_chain,
         question_generator=question_generator_chain,
         return_source_documents=True
     )
     result = qa_chain({"question": _chat.question.replace("\n", " "), "chat_history": _chat.history})
-    return result['answer']
+    return result
 
 
 @elasticapm.async_capture_span()

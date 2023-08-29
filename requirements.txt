@@ -29,3 +29,4 @@ elastic-apm
 langchain
 pinecone-client
 pypdf
+llama_index
