@@ -30,3 +30,4 @@ langchain
 pinecone-client
 pypdf
 llama_index
+pymongo
