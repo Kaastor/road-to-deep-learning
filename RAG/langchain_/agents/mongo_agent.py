@@ -15,21 +15,6 @@ from dateutil.parser import parse
 from mongo_connector import MongoConnector
 
 
-def str_to_dict(arg: str):
-    try:
-        _dict = ast.literal_eval(arg)
-
-        if not isinstance(_dict, dict):
-            print("The parsed object is not a dictionary.")
-            return None
-        else:
-            return _dict
-
-    except (ValueError, SyntaxError):
-        print("An error occurred while parsing the string to a dictionary.")
-        return None
-
-
 def convert_string_to_dict(input_str):
     # Replace MongoDB-specific data types with Python-compatible strings
     input_str = re.sub(r'ISODate\("(\d{4}-\d{2}-\d{2})"\)', r'"\1"', input_str)
@@ -48,6 +33,7 @@ def convert_string_to_dict(input_str):
 
     convert_dates(parsed_dict)
     return parsed_dict
+
 
 '''
 1. Create a prompt to get data from mongo.
@@ -89,14 +75,14 @@ prompt = PromptTemplate.from_template(q_template)
 llm = ChatOpenAI(temperature=0, model="gpt-3.5-turbo-0613")
 chain = LLMChain(llm=llm, prompt=prompt)
 
-instruction = "Return me files of user `susan@gat.com` created before 2023-07-07"
+instruction = "Return me files of user `susan@generalaudittool.com` created before 2023-07-07"
 
 response_query = chain.run(instruction=instruction)
 print("Query: ", response_query)
 # 3. Get the data
-connector = MongoConnector(database='X-drive')
+connector = MongoConnector(database='C03i2p9bk-drive')
 query = convert_string_to_dict(response_query)
-data = connector.query(query, collection='meta')
+data = connector.query(query, collection='file_meta')
 data_df = pd.DataFrame(list(data))
 print(data_df)
 
@@ -107,8 +93,8 @@ agent = create_pandas_dataframe_agent(
     verbose=True,
     agent_type=AgentType.OPENAI_FUNCTIONS,
 )
-agent.run("Which file has biggest size? Return it's title.")
 
-
-if __name__ == "__main__":
-    str_to_dict("{'owner': 'susan@gat.com', 'created': {'$lt': datetime.datetime(2023, 7, 7)}}")
+#agent.run("Which file has biggest size? Return it's title.")
+#agent.run("Calculate average file size.")
+#agent.run("Calculate average file size. Tell result in MB.")
+agent.run("Calculate average file size for each type of file.")

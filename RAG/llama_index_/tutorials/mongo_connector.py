@@ -15,7 +15,6 @@ from mongo_client import SimpleMongoReader
 - must add a PromptTemplate to give information about underlying schema, explanation of fields
 '''
 
-os.environ["OPENAI_API_KEY"] = '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'
 openai.api_key = os.environ["OPENAI_API_KEY"]
 
 logging.basicConfig(stream=sys.stdout, level=logging.INFO)
