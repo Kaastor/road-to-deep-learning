@@ -9,6 +9,8 @@ from langchain.agents.agent_types import AgentType
 from langchain.chains import LLMChain
 from langchain.chat_models import ChatOpenAI
 from langchain.prompts import PromptTemplate
+from langchain.callbacks import get_openai_callback
+
 from ast import literal_eval
 from dateutil.parser import parse
 
@@ -66,6 +68,7 @@ q_template = (
     Use these fields to construct filter for mongodb query in python. Constructed filters should always \
     have ONLY string values (no python function calls).\
     Your answer should be ONLY the query which can be applied to `filter` argument in pymongo `find` method.\
+    In other words you should only return python dict, NO ADDITIONAL TEXT.\
     If you don't know the answer, just say you don't know. DO NOT try to make up an answer.\
     Instruction from user: {instruction}"
 )
@@ -75,26 +78,32 @@ prompt = PromptTemplate.from_template(q_template)
 llm = ChatOpenAI(temperature=0, model="gpt-3.5-turbo-0613")
 chain = LLMChain(llm=llm, prompt=prompt)
 
-instruction = "Return me files of user `susan@generalaudittool.com` created before 2023-07-07"
+# instruction = "Return me files of user `susan@gat.com` created before 2023-07-07"
+instruction = "Return me all files"
 
-response_query = chain.run(instruction=instruction)
-print("Query: ", response_query)
-# 3. Get the data
-connector = MongoConnector(database='C03i2p9bk-drive')
-query = convert_string_to_dict(response_query)
-data = connector.query(query, collection='file_meta')
-data_df = pd.DataFrame(list(data))
-print(data_df)
+with get_openai_callback() as cb:
+    response_query = chain.run(instruction=instruction)
+    print("Query: ", response_query)
 
-# 3. Use Agent
-agent = create_pandas_dataframe_agent(
-    llm=llm,
-    df=data_df,
-    verbose=True,
-    agent_type=AgentType.OPENAI_FUNCTIONS,
-)
+    # 2. Get the data
+    connector = MongoConnector(database='C03i2p9bk-drive')
+    query = convert_string_to_dict(response_query)
+    data = connector.query(query, collection='file_meta')
+    data_df = pd.DataFrame(list(data))
 
-#agent.run("Which file has biggest size? Return it's title.")
-#agent.run("Calculate average file size.")
-#agent.run("Calculate average file size. Tell result in MB.")
-agent.run("Calculate average file size for each type of file.")
+    # 3. Use Agent
+    agent = create_pandas_dataframe_agent(
+        llm=llm,
+        df=data_df,
+        verbose=True,
+        agent_type=AgentType.OPENAI_FUNCTIONS,
+    )
+
+    # agent.run("Which file has biggest size? Return it's title.")
+    # agent.run("Calculate average file size.")
+    # agent.run("Calculate average file size. Tell result in MB.")
+    # $0.005735 (37 records)
+    # $0.008469 (178255 records)
+    agent.run("Calculate average file size for each type of file.")
+
+    print("Total cost: $", cb.total_cost)
