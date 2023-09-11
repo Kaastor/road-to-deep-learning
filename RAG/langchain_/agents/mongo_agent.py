@@ -78,7 +78,7 @@ prompt = PromptTemplate.from_template(q_template)
 llm = ChatOpenAI(temperature=0, model="gpt-3.5-turbo-0613")
 chain = LLMChain(llm=llm, prompt=prompt)
 
-# instruction = "Return me files of user `susan@gat.com` created before 2023-07-07"
+# instruction = "Return me files of user `susan@generalaudittool.com` created before 2023-07-07"
 instruction = "Return me all files"
 
 with get_openai_callback() as cb:
@@ -99,11 +99,16 @@ with get_openai_callback() as cb:
         agent_type=AgentType.OPENAI_FUNCTIONS,
     )
 
+    instruction = "Calculate average file size for each type of file."
+
     # agent.run("Which file has biggest size? Return it's title.")
     # agent.run("Calculate average file size.")
     # agent.run("Calculate average file size. Tell result in MB.")
     # $0.005735 (37 records)
     # $0.008469 (178255 records)
-    agent.run("Calculate average file size for each type of file.")
+    # response = agent.run("Calculate average file size for each type of file.")
+    # response = agent.run("Which user has the most files?")
+    response = agent.run("Give top 5 users that have in total the largest files? Give top 10 users that have in total the largest files? Give top 15 users that have in total the largest files?")
+
 
     print("Total cost: $", cb.total_cost)
