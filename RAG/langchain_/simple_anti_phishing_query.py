@@ -1,6 +1,7 @@
 from langchain.callbacks import get_openai_callback
 from langchain.chains import LLMChain
 from langchain.chat_models import ChatOpenAI
+from langchain.llms import VLLM
 from langchain.prompts import PromptTemplate
 
 q_template = (
@@ -33,7 +34,16 @@ Link To Bank Statement
 '''
 
 with get_openai_callback() as cb:
-    llm = ChatOpenAI(temperature=0, model="gpt-3.5-turbo-0613")
+    #llm = ChatOpenAI(temperature=0, model="gpt-3.5-turbo-0613")
+
+    llm = VLLM(model="mosaicml/mpt-7b",
+               trust_remote_code=True,  # mandatory for hf models
+               max_new_tokens=128,
+               top_k=10,
+               top_p=0.95,
+               temperature=0.8,
+               )
+
     chain = LLMChain(llm=llm, prompt=prompt)
 
     response = chain.run(email=email)

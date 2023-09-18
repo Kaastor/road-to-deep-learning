@@ -10,3 +10,4 @@ pypdf
 llama_index
 pymongo
 tabulate
+vllm
