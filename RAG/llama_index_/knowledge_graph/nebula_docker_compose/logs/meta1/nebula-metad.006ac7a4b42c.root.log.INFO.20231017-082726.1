@@ -1,0 +1,32 @@
+Log file created at: 2023/10/17 08:27:26
+Running on machine: 006ac7a4b42c
+Running duration (h:mm:ss): 0:00:00
+Log line format: [IWEF]yyyymmdd hh:mm:ss.uuuuuu threadid file:line] msg
+I20231017 08:27:26.193617     1 MetaDaemon.cpp:137] localhost = "metad1":9559
+I20231017 08:27:26.199820     1 NebulaStore.cpp:48] Start the raft service...
+I20231017 08:27:26.200431     1 NebulaSnapshotManager.cpp:25] Send snapshot is rate limited to 10485760 for each part by default
+I20231017 08:27:26.389895     1 RaftexService.cpp:46] Start raft service on 9560
+I20231017 08:27:26.390014     1 NebulaStore.cpp:82] Scan the local path, and init the spaces_
+I20231017 08:27:26.390072     1 NebulaStore.cpp:90] Scan path "/data/meta/nebula/0"
+I20231017 08:27:26.390097     1 NebulaStore.cpp:292] Init data from partManager for "metad1":9559
+I20231017 08:27:26.390118     1 NebulaStore.cpp:417] Create data space 0
+I20231017 08:27:26.436400    74 RocksEngine.cpp:107] open rocksdb on /data/meta/nebula/0/data
+I20231017 08:27:26.472236     1 NebulaStore.cpp:480] Space 0, part 0 has been added, asLearner 0
+I20231017 08:27:26.472314     1 NebulaStore.cpp:75] Register handler...
+I20231017 08:27:26.472330     1 MetaDaemonInit.cpp:106] Waiting for the leader elected...
+I20231017 08:27:26.472343     1 MetaDaemonInit.cpp:118] Leader has not been elected, sleep 1s
+I20231017 08:27:27.472482     1 MetaDaemonInit.cpp:153] Get meta version is 4
+I20231017 08:27:27.472550     1 MetaDaemonInit.cpp:169] Nebula store init succeeded, clusterId 517051793370362329
+I20231017 08:27:27.472565     1 MetaDaemon.cpp:150] Start http service
+I20231017 08:27:27.472826     1 MetaDaemonInit.cpp:226] Starting Meta HTTP Service
+I20231017 08:27:27.477130    97 WebService.cpp:124] Web service started on HTTP[19559]
+I20231017 08:27:27.477188     1 MetaDaemonInit.cpp:192] Check root user
+I20231017 08:27:27.477254     1 RootUserMan.h:35] God user exists
+I20231017 08:27:27.484143     1 MetaDaemon.cpp:193] The meta daemon start on "metad1":9559
+I20231017 08:27:27.484196     1 JobManager.cpp:88] Not leader, skip reading remaining jobs
+I20231017 08:27:27.484295     1 JobManager.cpp:64] JobManager initialized
+I20231017 08:27:27.484337   103 JobManager.cpp:150] JobManager::scheduleThread enter
+I20231017 08:27:27.866938   120 HBProcessor.cpp:33] Receive heartbeat from "graphd2":9669, role = GRAPH
+I20231017 08:27:27.867005   120 HBProcessor.cpp:89] Update host "graphd2":9669 dir info, root path: /usr/local/nebula, data path size: 0
+I20231017 08:27:27.964788   120 HBProcessor.cpp:33] Receive heartbeat from "storaged2":9779, role = STORAGE
+I20231017 08:27:27.964848   120 HBProcessor.cpp:41] Machine "storaged2":9779 is not registered

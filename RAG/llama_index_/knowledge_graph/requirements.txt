@@ -1,0 +1,5 @@
+nebula3-python
+pyvis
+networkx
+llama_hub
+youtube_transcript_api

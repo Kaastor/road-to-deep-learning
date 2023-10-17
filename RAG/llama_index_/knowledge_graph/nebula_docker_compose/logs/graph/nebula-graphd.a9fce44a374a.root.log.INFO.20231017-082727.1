@@ -1,0 +1,79 @@
+Log file created at: 2023/10/17 08:27:27
+Running on machine: a9fce44a374a
+Running duration (h:mm:ss): 0:00:00
+Log line format: [IWEF]yyyymmdd hh:mm:ss.uuuuuu threadid file:line] msg
+I20231017 08:27:27.849923     1 GraphDaemon.cpp:122] Starting Graph HTTP Service
+I20231017 08:27:27.852165     7 WebService.cpp:124] Web service started on HTTP[19669]
+I20231017 08:27:27.852201     1 GraphDaemon.cpp:136] Number of networking IO threads: 12
+I20231017 08:27:27.852221     1 GraphDaemon.cpp:145] Number of worker threads: 12
+I20231017 08:27:27.854355     1 MetaClient.cpp:80] Create meta client to "metad1":9559
+I20231017 08:27:27.854377     1 MetaClient.cpp:81] root path: /usr/local/nebula, data path size: 0
+I20231017 08:27:27.881374    39 ThriftClientManager-inl.h:67] resolve "metad2":9559 as "172.23.0.4":9559
+I20231017 08:27:28.886484    39 ThriftClientManager-inl.h:67] resolve "metad0":9559 as "172.23.0.3":9559
+I20231017 08:27:28.888442    40 ThriftClientManager-inl.h:67] resolve "metad0":9559 as "172.23.0.3":9559
+I20231017 08:27:28.889252    41 ThriftClientManager-inl.h:67] resolve "metad0":9559 as "172.23.0.3":9559
+I20231017 08:27:28.890273    42 ThriftClientManager-inl.h:67] resolve "metad0":9559 as "172.23.0.3":9559
+I20231017 08:27:28.929852    43 ThriftClientManager-inl.h:67] resolve "metad0":9559 as "172.23.0.3":9559
+I20231017 08:27:28.930904    44 ThriftClientManager-inl.h:67] resolve "metad0":9559 as "172.23.0.3":9559
+I20231017 08:27:28.931916    45 ThriftClientManager-inl.h:67] resolve "metad0":9559 as "172.23.0.3":9559
+I20231017 08:27:28.932801    46 ThriftClientManager-inl.h:67] resolve "metad0":9559 as "172.23.0.3":9559
+I20231017 08:27:28.933279     1 MetaClient.cpp:3263] Load leader of "storaged0":9779 in 0 space
+I20231017 08:27:28.933297     1 MetaClient.cpp:3263] Load leader of "storaged1":9779 in 0 space
+I20231017 08:27:28.933305     1 MetaClient.cpp:3263] Load leader of "storaged2":9779 in 0 space
+I20231017 08:27:28.933311     1 MetaClient.cpp:3269] Load leader ok
+I20231017 08:27:28.933920    47 ThriftClientManager-inl.h:67] resolve "metad0":9559 as "172.23.0.3":9559
+I20231017 08:27:28.934779    48 ThriftClientManager-inl.h:67] resolve "metad0":9559 as "172.23.0.3":9559
+I20231017 08:27:28.936684     1 MetaClient.cpp:162] Register time task for heartbeat!
+I20231017 08:27:28.938057    49 ThriftClientManager-inl.h:67] resolve "metad0":9559 as "172.23.0.3":9559
+I20231017 08:27:28.938647     1 GraphSessionManager.cpp:337] Total of 0 sessions are loaded
+I20231017 08:27:28.939011     1 MemoryUtils.cpp:171] MemoryTracker set static ratio: 0.8
+I20231017 08:27:28.939432    52 ThriftClientManager-inl.h:67] resolve "metad0":9559 as "172.23.0.3":9559
+I20231017 08:27:28.939839     1 Snowflake.cpp:17] WorkerId init success: 2
+I20231017 08:27:28.940066    54 GraphServer.cpp:63] Starting nebula-graphd on graphd:9669
+I20231017 08:27:29.263780    29 GraphService.cpp:77] Authenticating user root from 172.23.0.11:43246
+E20231017 08:27:29.268642    27 QueryInstance.cpp:151] Existed!, query: ADD HOSTS "storaged0":9779,"storaged1":9779,"storaged2":9779
+I20231017 08:34:15.152998    30 GraphService.cpp:77] Authenticating user root from 172.23.0.1:49896
+I20231017 08:39:20.412889    50 MetaClient.cpp:3263] Load leader of "storaged0":9779 in 0 space
+I20231017 08:39:20.412922    50 MetaClient.cpp:3263] Load leader of "storaged1":9779 in 0 space
+I20231017 08:39:20.412933    50 MetaClient.cpp:3263] Load leader of "storaged2":9779 in 0 space
+I20231017 08:39:20.412943    50 MetaClient.cpp:3269] Load leader ok
+I20231017 08:39:27.854176    27 SwitchSpaceExecutor.cpp:45] Graph switched to `phillies_rag', space id: 1
+I20231017 08:39:30.451658    50 MetaClient.cpp:3263] Load leader of "storaged0":9779 in 0 space
+I20231017 08:39:30.451701    50 MetaClient.cpp:3263] Load leader of "storaged1":9779 in 0 space
+I20231017 08:39:30.451718    50 MetaClient.cpp:3263] Load leader of "storaged2":9779 in 0 space
+I20231017 08:39:30.451731    50 MetaClient.cpp:3269] Load leader ok
+I20231017 08:39:40.467288    50 MetaClient.cpp:3263] Load leader of "storaged0":9779 in 0 space
+I20231017 08:39:40.467336    50 MetaClient.cpp:3263] Load leader of "storaged1":9779 in 0 space
+I20231017 08:39:40.467352    50 MetaClient.cpp:3263] Load leader of "storaged2":9779 in 1 space
+I20231017 08:39:40.467360    50 MetaClient.cpp:3269] Load leader ok
+I20231017 08:39:50.481899    50 MetaClient.cpp:3263] Load leader of "storaged0":9779 in 0 space
+I20231017 08:39:50.481935    50 MetaClient.cpp:3263] Load leader of "storaged1":9779 in 0 space
+I20231017 08:39:50.481953    50 MetaClient.cpp:3263] Load leader of "storaged2":9779 in 1 space
+I20231017 08:39:50.481966    50 MetaClient.cpp:3269] Load leader ok
+I20231017 08:40:20.511742    50 MetaClient.cpp:3263] Load leader of "storaged0":9779 in 0 space
+I20231017 08:40:20.511765    50 MetaClient.cpp:3263] Load leader of "storaged1":9779 in 0 space
+I20231017 08:40:20.511775    50 MetaClient.cpp:3263] Load leader of "storaged2":9779 in 1 space
+I20231017 08:40:20.511782    50 MetaClient.cpp:3269] Load leader ok
+I20231017 09:08:57.332154    29 GraphService.cpp:77] Authenticating user root from 172.23.0.1:48282
+I20231017 09:08:57.334523    26 SwitchSpaceExecutor.cpp:45] Graph switched to `phillies_rag', space id: 1
+I20231017 09:28:36.040753    30 GraphService.cpp:77] Authenticating user root from 172.23.0.1:55142
+I20231017 09:28:36.043916    30 SwitchSpaceExecutor.cpp:45] Graph switched to `phillies_rag', space id: 1
+I20231017 09:29:03.089187    43 ThriftClientManager-inl.h:67] resolve "storaged2":9779 as "172.23.0.5":9779
+I20231017 09:29:03.095410    44 ThriftClientManager-inl.h:67] resolve "storaged2":9779 as "172.23.0.5":9779
+I20231017 09:29:03.096532    45 ThriftClientManager-inl.h:67] resolve "storaged2":9779 as "172.23.0.5":9779
+I20231017 09:29:03.099555    46 ThriftClientManager-inl.h:67] resolve "storaged2":9779 as "172.23.0.5":9779
+I20231017 09:29:03.100692    47 ThriftClientManager-inl.h:67] resolve "storaged2":9779 as "172.23.0.5":9779
+I20231017 09:29:03.101752    48 ThriftClientManager-inl.h:67] resolve "storaged2":9779 as "172.23.0.5":9779
+I20231017 09:29:03.104542    49 ThriftClientManager-inl.h:67] resolve "storaged2":9779 as "172.23.0.5":9779
+I20231017 09:29:03.105616    52 ThriftClientManager-inl.h:67] resolve "storaged2":9779 as "172.23.0.5":9779
+I20231017 09:29:03.106602    39 ThriftClientManager-inl.h:67] resolve "storaged2":9779 as "172.23.0.5":9779
+I20231017 09:29:03.109961    40 ThriftClientManager-inl.h:67] resolve "storaged2":9779 as "172.23.0.5":9779
+I20231017 09:29:03.111099    41 ThriftClientManager-inl.h:67] resolve "storaged2":9779 as "172.23.0.5":9779
+I20231017 09:29:03.112176    42 ThriftClientManager-inl.h:67] resolve "storaged2":9779 as "172.23.0.5":9779
+I20231017 09:46:09.630594    23 FunctionUdfManager.cpp:93] Load UDF so library: /home/nebula/dev/nebula/udf/
+E20231017 09:46:09.630848    23 FunctionUdfManager.cpp:41] UDF Folder doesn't Exist!
+E20231017 09:46:09.631498    23 LabelIndexSeek.cpp:56] SemanticError: No valid index for label `relationship'.
+I20231017 09:51:09.631181  1135 FunctionUdfManager.cpp:93] Load UDF so library: /home/nebula/dev/nebula/udf/
+E20231017 09:51:09.631282  1135 FunctionUdfManager.cpp:41] UDF Folder doesn't Exist!
+I20231017 09:56:09.631489  1135 FunctionUdfManager.cpp:93] Load UDF so library: /home/nebula/dev/nebula/udf/
+E20231017 09:56:09.631588  1135 FunctionUdfManager.cpp:41] UDF Folder doesn't Exist!
