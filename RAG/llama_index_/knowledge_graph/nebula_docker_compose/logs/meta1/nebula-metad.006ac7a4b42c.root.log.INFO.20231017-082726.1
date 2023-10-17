@@ -30,3 +30,24 @@ I20231017 08:27:27.866938   120 HBProcessor.cpp:33] Receive heartbeat from "grap
 I20231017 08:27:27.867005   120 HBProcessor.cpp:89] Update host "graphd2":9669 dir info, root path: /usr/local/nebula, data path size: 0
 I20231017 08:27:27.964788   120 HBProcessor.cpp:33] Receive heartbeat from "storaged2":9779, role = STORAGE
 I20231017 08:27:27.964848   120 HBProcessor.cpp:41] Machine "storaged2":9779 is not registered
+I20231017 10:02:21.109742     1 MetaDaemon.cpp:230] Signal 15(Terminated) received, stopping this server
+I20231017 10:02:21.117913     1 JobManager.cpp:138] JobManager::shutDown() begin
+I20231017 10:02:21.119648   103 JobManager.cpp:155] Detect shutdown called, exit
+I20231017 10:02:21.119750   103 JobDescription.cpp:113] Loading job description failed, error: E_LEADER_CHANGED
+I20231017 10:02:21.119880   103 JobManager.cpp:175] Load an invalid job from space 0 jodId 0
+I20231017 10:02:21.120090     1 JobManager.cpp:146] JobManager::shutDown() end
+I20231017 10:02:21.120149     1 NebulaStore.cpp:343] Stop the raft service...
+I20231017 10:02:21.120195     1 RaftexService.cpp:67] Stopping the raftex service on port 9560
+I20231017 10:02:21.120239     1 RaftexService.cpp:77] All partitions have stopped
+I20231017 10:02:21.120277     1 NebulaStore.cpp:346] Stop kv engine...
+I20231017 10:02:21.120657     1 NebulaStore.cpp:343] Stop the raft service...
+I20231017 10:02:21.120712     1 RaftexService.cpp:67] Stopping the raftex service on port 9560
+I20231017 10:02:21.120741     1 RaftexService.cpp:77] All partitions have stopped
+I20231017 10:02:21.120770     1 NebulaStore.cpp:346] Stop kv engine...
+I20231017 10:02:21.120816     1 NebulaStore.cpp:36] Cut off the relationship with meta client
+I20231017 10:02:21.122282     1 Part.h:59] [Port: 9560, Space: 0, Part: 0] ~Part()
+I20231017 10:02:21.123126     1 RocksEngine.h:247] Release rocksdb on /data/meta/nebula/0
+I20231017 10:02:21.124204     1 NebulaStore.cpp:44] ~NebulaStore()
+I20231017 10:02:21.124429     1 MetaDaemon.cpp:215] The meta Daemon stopped
+I20231017 10:02:21.129194     1 JobManager.cpp:138] JobManager::shutDown() begin
+I20231017 10:02:21.129271     1 JobManager.cpp:141] JobManager not running, exit

@@ -624,3 +624,5 @@ Block cache LRUCache@0x7fd6b9420930#1 capacity: 4.00 MB collections: 10 last_cop
 Block cache entry stats(count,size,portion): DataBlock(1,0.12 KB,0.00305176%) Misc(1,0.00 KB,0%)
 
 ** File Read Latency Histogram By Level [default] **
+2023/10/17-10:02:20.045474 140560227873024 [db/db_impl/db_impl.cc:477] Shutdown: canceling all background work
+2023/10/17-10:02:20.046174 140560227873024 [db/db_impl/db_impl.cc:677] Shutdown complete

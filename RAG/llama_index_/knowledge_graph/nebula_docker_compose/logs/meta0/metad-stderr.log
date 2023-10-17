@@ -4673,3 +4673,52 @@ I20231017 10:01:25.229914   120 HBProcessor.cpp:33] Receive heartbeat from "stor
 I20231017 10:01:25.249907   120 HBProcessor.cpp:33] Receive heartbeat from "graphd1":9669, role = GRAPH
 I20231017 10:01:25.461970   120 HBProcessor.cpp:33] Receive heartbeat from "graphd":9669, role = GRAPH
 I20231017 10:01:25.533995   120 HBProcessor.cpp:33] Receive heartbeat from "storaged2":9779, role = STORAGE
+I20231017 10:01:34.168565   120 HBProcessor.cpp:33] Receive heartbeat from "storaged0":9779, role = STORAGE
+I20231017 10:01:34.586402   120 HBProcessor.cpp:33] Receive heartbeat from "graphd2":9669, role = GRAPH
+I20231017 10:01:35.238006   120 HBProcessor.cpp:33] Receive heartbeat from "storaged1":9779, role = STORAGE
+I20231017 10:01:35.260512   120 HBProcessor.cpp:33] Receive heartbeat from "graphd1":9669, role = GRAPH
+I20231017 10:01:35.469995   120 HBProcessor.cpp:33] Receive heartbeat from "graphd":9669, role = GRAPH
+I20231017 10:01:35.542294   120 HBProcessor.cpp:33] Receive heartbeat from "storaged2":9779, role = STORAGE
+I20231017 10:01:44.178573   120 HBProcessor.cpp:33] Receive heartbeat from "storaged0":9779, role = STORAGE
+I20231017 10:01:44.597920   120 HBProcessor.cpp:33] Receive heartbeat from "graphd2":9669, role = GRAPH
+I20231017 10:01:45.247872   120 HBProcessor.cpp:33] Receive heartbeat from "storaged1":9779, role = STORAGE
+I20231017 10:01:45.269928   120 HBProcessor.cpp:33] Receive heartbeat from "graphd1":9669, role = GRAPH
+I20231017 10:01:45.477840   120 HBProcessor.cpp:33] Receive heartbeat from "graphd":9669, role = GRAPH
+I20231017 10:01:45.550221   120 HBProcessor.cpp:33] Receive heartbeat from "storaged2":9779, role = STORAGE
+I20231017 10:01:54.189886   120 HBProcessor.cpp:33] Receive heartbeat from "storaged0":9779, role = STORAGE
+I20231017 10:01:54.609236   120 HBProcessor.cpp:33] Receive heartbeat from "graphd2":9669, role = GRAPH
+I20231017 10:01:55.258028   120 HBProcessor.cpp:33] Receive heartbeat from "storaged1":9779, role = STORAGE
+I20231017 10:01:55.278963   120 HBProcessor.cpp:33] Receive heartbeat from "graphd1":9669, role = GRAPH
+I20231017 10:01:55.488612   120 HBProcessor.cpp:33] Receive heartbeat from "graphd":9669, role = GRAPH
+I20231017 10:01:55.562222   120 HBProcessor.cpp:33] Receive heartbeat from "storaged2":9779, role = STORAGE
+I20231017 10:02:04.197863   120 HBProcessor.cpp:33] Receive heartbeat from "storaged0":9779, role = STORAGE
+I20231017 10:02:04.618288   120 HBProcessor.cpp:33] Receive heartbeat from "graphd2":9669, role = GRAPH
+I20231017 10:02:05.265839   120 HBProcessor.cpp:33] Receive heartbeat from "storaged1":9779, role = STORAGE
+I20231017 10:02:05.289865   120 HBProcessor.cpp:33] Receive heartbeat from "graphd1":9669, role = GRAPH
+I20231017 10:02:05.497931   120 HBProcessor.cpp:33] Receive heartbeat from "graphd":9669, role = GRAPH
+I20231017 10:02:05.574405   120 HBProcessor.cpp:33] Receive heartbeat from "storaged2":9779, role = STORAGE
+I20231017 10:02:14.205803   120 HBProcessor.cpp:33] Receive heartbeat from "storaged0":9779, role = STORAGE
+I20231017 10:02:15.274456   120 HBProcessor.cpp:33] Receive heartbeat from "storaged1":9779, role = STORAGE
+I20231017 10:02:15.508795   120 HBProcessor.cpp:33] Receive heartbeat from "graphd":9669, role = GRAPH
+I20231017 10:02:15.585873   120 HBProcessor.cpp:33] Receive heartbeat from "storaged2":9779, role = STORAGE
+I20231017 10:02:21.102259     1 MetaDaemon.cpp:230] Signal 15(Terminated) received, stopping this server
+I20231017 10:02:21.111758     1 JobManager.cpp:138] JobManager::shutDown() begin
+I20231017 10:02:21.114127   103 JobManager.cpp:155] Detect shutdown called, exit
+I20231017 10:02:21.114296   103 JobDescription.cpp:113] Loading job description failed, error: E_JOB_NOT_IN_SPACE
+I20231017 10:02:21.114449   103 JobManager.cpp:175] Load an invalid job from space 0 jodId 0
+I20231017 10:02:21.114676     1 JobManager.cpp:146] JobManager::shutDown() end
+I20231017 10:02:21.114738     1 NebulaStore.cpp:343] Stop the raft service...
+I20231017 10:02:21.114787     1 RaftexService.cpp:67] Stopping the raftex service on port 9560
+I20231017 10:02:21.114827     1 RaftexService.cpp:77] All partitions have stopped
+I20231017 10:02:21.114866     1 NebulaStore.cpp:346] Stop kv engine...
+I20231017 10:02:21.115252     1 NebulaStore.cpp:343] Stop the raft service...
+I20231017 10:02:21.115303     1 RaftexService.cpp:67] Stopping the raftex service on port 9560
+I20231017 10:02:21.115330     1 RaftexService.cpp:77] All partitions have stopped
+I20231017 10:02:21.115360     1 NebulaStore.cpp:346] Stop kv engine...
+I20231017 10:02:21.115404     1 NebulaStore.cpp:36] Cut off the relationship with meta client
+I20231017 10:02:21.116636     1 Part.h:59] [Port: 9560, Space: 0, Part: 0] ~Part()
+I20231017 10:02:21.117532     1 RocksEngine.h:247] Release rocksdb on /data/meta/nebula/0
+I20231017 10:02:21.118606     1 NebulaStore.cpp:44] ~NebulaStore()
+I20231017 10:02:21.127115     1 MetaDaemon.cpp:215] The meta Daemon stopped
+I20231017 10:02:21.131536     1 JobManager.cpp:138] JobManager::shutDown() begin
+I20231017 10:02:21.131623     1 JobManager.cpp:141] JobManager not running, exit

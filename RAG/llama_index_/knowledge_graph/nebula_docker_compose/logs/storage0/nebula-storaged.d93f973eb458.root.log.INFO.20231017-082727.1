@@ -72,3 +72,20 @@ I20231017 08:40:19.294656    63 MetaClient.cpp:3263] Load leader of "storaged0":
 I20231017 08:40:19.294701    63 MetaClient.cpp:3263] Load leader of "storaged1":9779 in 0 space
 I20231017 08:40:19.294723    63 MetaClient.cpp:3263] Load leader of "storaged2":9779 in 1 space
 I20231017 08:40:19.294737    63 MetaClient.cpp:3269] Load leader ok
+I20231017 10:02:20.024387     1 StorageDaemon.cpp:201] Signal 15(Terminated) received, stopping this server
+I20231017 10:02:20.026149     1 NebulaStore.cpp:343] Stop the raft service...
+I20231017 10:02:20.026201     1 RaftexService.cpp:67] Stopping the raftex service on port 9780
+I20231017 10:02:20.026223     1 RaftexService.cpp:77] All partitions have stopped
+I20231017 10:02:20.026244     1 NebulaStore.cpp:346] Stop kv engine...
+I20231017 10:02:20.038681     1 AdminTaskManager.cpp:176] enter AdminTaskManager::shutdown()
+I20231017 10:02:20.038779   104 AdminTaskManager.cpp:146] Unreported-Admin-Thread stopped
+I20231017 10:02:20.056851   103 AdminTaskManager.cpp:231] detect AdminTaskManager::shutdown()
+I20231017 10:02:20.057147     1 RocksEngine.h:247] Release rocksdb on /data/storage/nebula/0
+I20231017 10:02:20.057922     1 AdminTaskManager.cpp:193] exit AdminTaskManager::shutdown()
+I20231017 10:02:20.058029     1 NebulaStore.cpp:343] Stop the raft service...
+I20231017 10:02:20.058058     1 RaftexService.cpp:67] Stopping the raftex service on port 9780
+I20231017 10:02:20.058076     1 RaftexService.cpp:77] All partitions have stopped
+I20231017 10:02:20.058096     1 NebulaStore.cpp:346] Stop kv engine...
+I20231017 10:02:20.058115     1 NebulaStore.cpp:36] Cut off the relationship with meta client
+I20231017 10:02:20.058705     1 NebulaStore.cpp:44] ~NebulaStore()
+I20231017 10:02:20.058835     1 StorageDaemon.cpp:186] The storage Daemon stopped
